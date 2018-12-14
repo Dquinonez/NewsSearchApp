@@ -35,6 +35,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 [reactstrap](https://reactstrap.github.io/components/form/)
 
-[bootstrap] (https://github.com/twbs/bootstrap)
+[bootstrap](https://github.com/twbs/bootstrap)
 
-[react-scroll] (https://github.com/fisshy/react-scroll)
+[react-scroll](https://github.com/fisshy/react-scroll)
