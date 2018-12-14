@@ -43,7 +43,8 @@ class App extends Component {
     e.preventDefault();
 
     this.setState({
-      loading: true
+      loading: true,
+      page: 1
     }, () => {
       this.handleGetArticles();
     });
@@ -51,7 +52,6 @@ class App extends Component {
 
   handleGetArticles() {
     getArticles(this.state).then(res => {
-      console.log(res);
       this.setState(prevState => {
         let newState = prevState;
         newState['loading'] = false;
@@ -79,14 +79,12 @@ class App extends Component {
       page += 1;
     }
 
-    if (page) {
-      this.setState({
-        page
-      }, () => {
-        this.handleGetArticles();
-        animateScroll.scrollToTop();
-      });
-    }
+    this.setState({
+      page
+    }, () => {
+      this.handleGetArticles();
+      animateScroll.scrollToTop();
+    });
   }
 
   render() {

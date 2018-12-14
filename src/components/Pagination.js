@@ -7,7 +7,7 @@ import {
 import './Pagination.css';
 
 class Pagination extends Component {
-  renderPages() {
+  renderPagingOptions() {
     if (this.props.pages) {
 
       let pagingOptions = [];
@@ -32,7 +32,7 @@ class Pagination extends Component {
           <div className="page-note">{`Viewing page ${this.props.page} of ${this.props.pages}`}</div>
           <Row className="pagination-bar">
             <Row className="pagination">
-              {this.renderPages()}
+              {this.renderPagingOptions()}
             </Row>
           </Row>
         </div>

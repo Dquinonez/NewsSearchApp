@@ -1,6 +1,6 @@
 # News Search App
 
-React app that uses the [NewsAPI](https://newsapi.org/) to search news by term and sort by: relevancy, popularity and published At.
+Is a React app that uses the [NewsAPI](https://newsapi.org/) to search news by term and sort by: relevancy, popularity and published At.
 
 The app shows 10 articles at a time and include a "Previous" and "Next" buttons to move between pages.
 
