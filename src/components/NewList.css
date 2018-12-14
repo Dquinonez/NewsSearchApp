@@ -1,5 +1,9 @@
+.new-list-container {
+  background-color: #ecebeb;
+}
+
 .article-box {
-  padding: 10px;
+  padding: 30px;
 }
 
 .article-box img {

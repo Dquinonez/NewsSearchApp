@@ -23,12 +23,13 @@ class Search extends Component {
             placeholder="Some search term"
             value={this.props.search}
             onChange={e => this.props.onChange(e)}
+            onKeyDown={e => this.props.onKeyDown(e)}
           />
         </Col>
         <Col>
           <Input type="select" name="sort" id="sort"
             defaultValue={this.props.sort}
-            onChange={e => this.props.onChange(e)}>
+            onChange={e => this.props.onSortChange(e)}>
             <option>Sort Articles</option>
             {this.props.sortOptions.map((option, idx )=> <option key={idx} value={option.value}>{option.display}</option>)}
           </Input>
@@ -46,6 +47,8 @@ Search.propTypes = {
   sort: PropTypes.string,
   onSearch: PropTypes.func,
   onChange: PropTypes.func,
+  onKeyDown: PropTypes.func,
+  onSortChange: PropTypes.func,
   sortOptions: PropTypes.array
 };
 

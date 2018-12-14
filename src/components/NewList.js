@@ -39,7 +39,7 @@ class NewList extends Component {
     }
 
     return (
-      <Row>
+      <Row className="new-list-container">
         {this.renderArticles()}
       </Row>
     );

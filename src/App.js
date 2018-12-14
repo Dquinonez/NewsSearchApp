@@ -25,6 +25,8 @@ class App extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
+    this.handleSortChange = this.handleSortChange.bind(this);
     this.handlePagination = this.handlePagination.bind(this);
   }
 
@@ -39,9 +41,29 @@ class App extends Component {
     });
   }
 
+  handleKeyDown(e) {
+    if(e.keyCode === 13){
+      this.handleBasicSearch();
+   }
+  }
+
+  handleSortChange(e) {
+    if (this.state.search !== '') {
+      this.setState({
+        sort: e.target.value
+      }, () => {
+        this.handleBasicSearch();
+      });
+    }
+  }
+
   handleSearch(e) {
     e.preventDefault();
 
+    this.handleBasicSearch();
+  }
+
+  handleBasicSearch() {
     this.setState({
       loading: true,
       page: 1
@@ -52,6 +74,7 @@ class App extends Component {
 
   handleGetArticles() {
     getArticles(this.state).then(res => {
+      console.log(res.data)
       this.setState(prevState => {
         let newState = prevState;
         newState['loading'] = false;
@@ -88,13 +111,14 @@ class App extends Component {
   }
 
   render() {
-    console.log('STATE', this.state);
     return (
       <Container>
         <Search { ...this.state }
           onSearch={this.handleSearch}
           onChange={this.handleChange} 
-          sortOptions={SORT_OPTIONS} 
+          sortOptions={SORT_OPTIONS}
+          onKeyDown={this.handleKeyDown}
+          onSortChange={this.handleSortChange}
         />
         <NewList { ...this.state } />
         <Pagination { ...this.state } onClick={this.handlePagination} />
