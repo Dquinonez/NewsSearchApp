@@ -22,3 +22,8 @@
 .pagination .btn:hover {
   text-decoration: underline;
 }
+
+.page-note {
+  color: #474747;
+  margin-left: 10px;
+}

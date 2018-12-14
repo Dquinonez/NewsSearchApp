@@ -13,11 +13,11 @@ class Pagination extends Component {
       let pagingOptions = [];
 
       if (this.props.page > 1) {
-        pagingOptions.push([<Button key={1} color="link" className="btn" onClick={e => this.props.onClick(e, 'left')}>Previous</Button>])
+        pagingOptions.push([<Button key={1} color="link" className="btn" onClick={e => this.props.onClick(e, 'left')}>&laquo; Previous</Button>])
       }
 
       if (this.props.page < this.props.pages) {
-        pagingOptions.push([<Button key={2} color="link" className="btn" onClick={e => this.props.onClick(e, 'right')}>Next</Button>])
+        pagingOptions.push([<Button key={2} color="link" className="btn" onClick={e => this.props.onClick(e, 'right')}>Next &raquo;</Button>])
       }
 
       return pagingOptions;
@@ -27,11 +27,15 @@ class Pagination extends Component {
   render() {
     if (this.props.pages && !this.props.loding) {
       return (
-        <Row className="pagination-bar">
-          <div className="pagination">
-            {this.renderPages()}
-          </div>
-        </Row>
+        <div>
+          <hr />
+          <div className="page-note">{`Viewing page ${this.props.page} of ${this.props.pages}`}</div>
+          <Row className="pagination-bar">
+            <Row className="pagination">
+              {this.renderPages()}
+            </Row>
+          </Row>
+        </div>
       );
     }
 
