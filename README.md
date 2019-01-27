@@ -21,6 +21,10 @@ Install all the necessary dependencies.
 
 ```npm install```
 
+Before running the app, remember to update the API key in the constants.js file
+
+[constants.js](./src/constants.js)
+
 To run the app
 
 ```npm start```
