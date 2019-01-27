@@ -20,7 +20,7 @@ class Search extends Component {
           <Input type="text"
             name="search"
             id="search"
-            placeholder="Some search term"
+            placeholder="Search term"
             value={this.props.search}
             onChange={e => this.props.onChange(e)}
             onKeyDown={e => this.props.onKeyDown(e)}
@@ -35,7 +35,7 @@ class Search extends Component {
           </Input>
         </Col>
         <Col>
-          <Button color="danger" onClick={e => this.props.onSearch(e)} >Search</Button>
+          <Button color="primary" onClick={e => this.props.onSearch(e)} >Search</Button>
         </Col>
       </Row>
     );
